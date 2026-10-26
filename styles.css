@@ -1,79 +1,89 @@
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f4f7fb;
+  color: #243047;
 }
 
 h1 {
-  text-align: center;
-  margin: 20px 0;
+  color: #1d3557;
 }
 
-/* Input Field and Button */
-#city-input {
-  display: block;
-  margin: 20px auto;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  font-size: 16px;
+input,
+button {
+  padding: 12px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+input {
   border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
-#fetch-weather {
-  display: block;
-  margin: 10px auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
+button {
+  background-color: #1d3557;
+  color: white;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
 }
 
-#fetch-weather:hover {
-  background-color: #0056b3;
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-/* Weather Display Section */
-#weather-display {
-  margin: 20px auto;
-  padding: 10px;
-  width: 90%;
-  max-width: 600px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Error Message */
-#error-message {
-  color: red;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Hidden Class for Error Handling */
+/* Hide elements when needed */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
-/* BONUS: Loading Spinner */
-#loading-spinner {
-  display: none;
-  margin: 20px auto;
-  text-align: center;
+/* Error message styling */
+.error {
+  background-color: #ffe5e5;
+  color: #a40000;
+  border: 1px solid #d93025;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 5px;
 }
 
-#loading-spinner img {
-  width: 50px;
-  height: 50px;
+/* Loading indicator */
+#loading {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Animated spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ccc;
+  border-top-color: #1d3557;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Weather alerts */
+#alerts-display h2 {
+  color: #1d3557;
+}
+
+#alerts-display li {
+  margin-bottom: 12px;
+  padding: 10px;
+  background-color: white;
+  border-left: 4px solid #457b9d;
+  list-style-position: inside;
+  border-radius: 4px;
 }
